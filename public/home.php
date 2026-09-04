@@ -2,19 +2,20 @@
 require_once "../utils/autoloader.php";
 
 
-// $possibilitesReponsesQuestion1 = [
-//     new Answer('Hydnora africana'),
-//     new Answer('Rafflésie')
-// ];
-// $possibilitesReponsesQuestion2 = [
-//     new Answer('Hydnora africana'),
-//     new Answer('Rafflésie')
-// ];
+$possibilitesReponsesQuestion1 = [
+    new Answer('Hydnora africana'),
+    new Answer('Rafflésie')
+];
+$possibilitesReponsesQuestion2 = [
+    new Answer('Hydnora africana'),
+    new Answer('Rafflésie')
+];
 
-$question1 = new Question('Quelle est la fleur la plus rare du monde ?');
+
+$question1 = new Question('Quelle est la fleur la plus rare du monde ?'[]);
 $question2 = new Question('Quelle plante a inspiré le design des Demogorgons dans la série Stranger Things ?');
 
-$qcm = new Qcm("Mathématique", [
+$qcm = new Qcm("Quizz des plantes", [
     $question1,
     $question2
 ]);
@@ -51,7 +52,7 @@ $qcm = new Qcm("Mathématique", [
     ?> -->
 
 
-    <p><?= $qcm->getQuestions()[1]->getIntitule() ?></p>
+    <p><?= $qcm->getQuestions()[0]->getIntitule() ?></p>
 
 
     <!-- <p>Réponse 1 : Hydnora africana</p>

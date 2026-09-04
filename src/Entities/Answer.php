@@ -1,8 +1,19 @@
 <?php
 class Answer
 {
-    private string $answerQuestion1;
-    private string $answerQuestion2;
+    private array $answer;
+
+       public function __construct(
+        array $answer
+    )
+    {
+       $this->answer = $answer;
+    }
+
+    public function getAnswer(): array
+     {
+        return $this->answer;
+    }
 }
 
 $answerQuestion1 = new Answer('Rafflésie');

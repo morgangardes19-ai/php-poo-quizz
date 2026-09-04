@@ -1,20 +1,20 @@
 <?php
 class Question
 {
-    private string $intitulé;
+    private string $intitule;
     // private array $answers;
 
     public function __construct(
-        string $intitulé,
+        string $intitule,
         // array $answers
     )
     {
-       $this->intitulé = $intitulé;
+       $this->intitule = $intitule;
     }
 
     public function getIntitule(): string
      {
-        return $this->intitulé;
+        return $this->intitule;
     }
 }
 
