@@ -1,16 +1,16 @@
 <?php
 class Answer
 {
-    private array $answer;
+    private string $answer;
 
        public function __construct(
-        array $answer
+        string $answer
     )
     {
        $this->answer = $answer;
     }
 
-    public function getAnswer(): array
+    public function getAnswer(): string
      {
         return $this->answer;
     }
