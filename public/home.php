@@ -47,10 +47,9 @@ $questionPossibleDuQcmLivre = [
 $qcmLivres = new Qcm("Quizz des livres", $questionPossibleDuQcmLivre);
 // ====================================================================================
 
-// var_dump($qcm->getQuestions()[0]->getIntitule());
 ?>
-    
-    
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,27 +63,54 @@ $qcmLivres = new Qcm("Quizz des livres", $questionPossibleDuQcmLivre);
 
 <body>
 
-    <h1><?=  $qcmPlantes->getName()  ?></h1>
+    <!-- <h1><?= $qcmPlantes->getName()  ?></h1> -->
+
+    <h1>Choisis ton quizz</h1>
+
+    <?php if (!isset($_GET['qcm'])) { ?>
+        <a href="home.php?qcm=plantes">Quizz des plantes</a><br>
+        <a href="home.php?qcm=livres">Quizz des livres</a>
+    <?php } ?>
+
 
     <p><?= "1/{$qcmPlantes->compteQuestions()}" ?></p>
 
-    <!-- <?php 
-    foreach ($qcmPlantes->getQuestions() as $question) { ?>
+    <!-- <?php
+            foreach ($qcmPlantes->getQuestions() as $question) { ?>
         <p><?= $question->getIntitule() ?></p>
     
     
-    <?php 
-    }
-    
+    <?php
+            }
+
     ?> -->
 
-
+    <h2></h2>
     <p><?= $qcmPlantes->getQuestions()[0]->getIntitule() ?></p>
+    <button><?= $possibilitesReponsesQuestion1[0]->getAnswer(); ?></button>
+    <button><?= $possibilitesReponsesQuestion1[1]->getAnswer(); ?></button>
+
+    <h2></h2>
     <p><?= $qcmPlantes->getQuestions()[1]->getIntitule() ?></p>
+    <button><?= $possibilitesReponsesQuestion1[0]->getAnswer(); ?></button>
+    <button><?= $possibilitesReponsesQuestion1[1]->getAnswer(); ?></button>
 
+    <h2></h2>
     <p><?= $qcmLivres->getQuestions()[0]->getIntitule() ?></p>
-    <p><?= $qcmLivres->getQuestions()[1]->getIntitule() ?></p>
+    <button><?= $possibilitesReponsesQuestion3[0]->getAnswer(); ?></button>
+    <button><?= $possibilitesReponsesQuestion3[1]->getAnswer(); ?></button>
 
+    <h2></h2>
+    <p><?= $qcmLivres->getQuestions()[1]->getIntitule() ?></p>
+    <button><?= $possibilitesReponsesQuestion4[0]->getAnswer() ?></button>
+    <button><?= $possibilitesReponsesQuestion4[1]->getAnswer() ?></button>
+
+    <?php
+
+
+
+    ?>
 </body>
 <footer></footer>
+
 </html>
