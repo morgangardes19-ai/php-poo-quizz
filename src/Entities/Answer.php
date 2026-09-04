@@ -5,7 +5,8 @@ class Answer
     private bool $isCorrect;
 
        public function __construct(
-        string $answer
+        string $answer,
+        bool $isCorrect
     )
     {
        $this->answer = $answer;
