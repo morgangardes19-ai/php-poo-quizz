@@ -16,7 +16,7 @@ $question1 = new Question('Quelle est la fleur la plus rare du monde ?', $possib
 // $question2 = new Question('Quelle plante a inspiré le design des Demogorgons dans la série Stranger Things ?');
 
 $qcm = new Qcm("Quizz des plantes", [
-    $question1,
+    $question1->getAnswers()
     // $question2
 ]);
 

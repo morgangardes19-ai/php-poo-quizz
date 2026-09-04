@@ -10,6 +10,7 @@ class Question
     )
     {
        $this->intitule = $intitule;
+       $this->answer = $answer;
     }
 
     public function getIntitule(): string
@@ -22,4 +23,3 @@ class Question
     return $this->answer;
 }
 }
-
