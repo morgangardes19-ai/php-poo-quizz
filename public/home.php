@@ -3,8 +3,8 @@ require_once "../utils/autoloader.php";
 
 
 $possibilitesReponsesQuestion1 = [
-    new Answer('Hydnora africana'),
-    new Answer('Rafflésie')
+    new Answer('Hydnora africana', false),
+    new Answer('Rafflésie', true)
 ];
 // $possibilitesReponsesQuestion2 = [
 //     new Answer('Hydnora africana'),
