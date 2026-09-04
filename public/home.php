@@ -21,7 +21,7 @@ $questionPossibleDuQcm = [
 
 
 // Création du Qcm à partir des questions et réponses précédentes
-$qcm = new Qcm("Quizz des plantes", $questionPossibleDuQcm)
+$qcm = new Qcm("Quizz des plantes", $questionPossibleDuQcm);
 // ==================================================================================
 
 // ===================== Partie du QCM 2 sur les livres =============================
@@ -44,7 +44,7 @@ $questionPossibleDuQcm = [
 
 
 // Création du Qcm à partir des questions et réponses précédentes
-$qcm = new Qcm("Quizz des plantes", $questionPossibleDuQcm)
+$qcm = new Qcm("Quizz des livres", $questionPossibleDuQcm);
 // ====================================================================================
 
 // var_dump($qcm->getQuestions()[0]->getIntitule());
