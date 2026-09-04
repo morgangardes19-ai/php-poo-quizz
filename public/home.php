@@ -21,7 +21,7 @@ $questionPossibleDuQcm = [
 
 
 // Création du Qcm à partir des questions et réponses précédentes
-$qcm = new Qcm("Quizz des plantes", $questionPossibleDuQcm);
+$qcmPlantes = new Qcm("Quizz des plantes", $questionPossibleDuQcm);
 // ==================================================================================
 
 // ===================== Partie du QCM 2 sur les livres =============================
@@ -44,7 +44,7 @@ $questionPossibleDuQcmLivre = [
 
 
 // Création du Qcm à partir des questions et réponses précédentes
-$qcm2 = new Qcm("Quizz des livres", $questionPossibleDuQcmLivre);
+$qcmLivres = new Qcm("Quizz des livres", $questionPossibleDuQcmLivre);
 // ====================================================================================
 
 // var_dump($qcm->getQuestions()[0]->getIntitule());
@@ -64,12 +64,12 @@ $qcm2 = new Qcm("Quizz des livres", $questionPossibleDuQcmLivre);
 
 <body>
 
-    <h1><?=  $qcm->getName()  ?></h1>
+    <h1><?=  $qcmPlantes->getName()  ?></h1>
 
-    <p><?= "1/{$qcm->compteQuestions()}" ?></p>
+    <p><?= "1/{$qcmPlantes->compteQuestions()}" ?></p>
 
     <!-- <?php 
-    foreach ($qcm->getQuestions() as $question) { ?>
+    foreach ($qcmPlantes->getQuestions() as $question) { ?>
         <p><?= $question->getIntitule() ?></p>
     
     
@@ -79,7 +79,11 @@ $qcm2 = new Qcm("Quizz des livres", $questionPossibleDuQcmLivre);
     ?> -->
 
 
-    <p><?= $qcm->getQuestions()[0]->getIntitule() ?></p>
+    <p><?= $qcmPlantes->getQuestions()[0]->getIntitule() ?></p>
+    <p><?= $qcmPlantes->getQuestions()[1]->getIntitule() ?></p>
+
+    <p><?= $qcmLivres->getQuestions()[0]->getIntitule() ?></p>
+    <p><?= $qcmLivres->getQuestions()[1]->getIntitule() ?></p>
 
 </body>
 <footer></footer>
