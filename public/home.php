@@ -6,13 +6,13 @@ $possibilitesReponsesQuestion1 = [
     new Answer('Hydnora africana'),
     new Answer('Rafflésie')
 ];
-$possibilitesReponsesQuestion2 = [
-    new Answer('Hydnora africana'),
-    new Answer('Rafflésie')
-];
+// $possibilitesReponsesQuestion2 = [
+//     new Answer('Hydnora africana'),
+//     new Answer('Rafflésie')
+// ];
 
 
-$question1 = new Question('Quelle est la fleur la plus rare du monde ?'[]);
+$question1 = new Question('Quelle est la fleur la plus rare du monde ?', $possibilitesReponsesQuestion1);
 $question2 = new Question('Quelle plante a inspiré le design des Demogorgons dans la série Stranger Things ?');
 
 $qcm = new Qcm("Quizz des plantes", [

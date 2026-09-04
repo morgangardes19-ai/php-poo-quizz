@@ -15,6 +15,3 @@ class Answer
         return $this->answer;
     }
 }
-
-$answerQuestion1 = new Answer('Rafflésie');
-$answerQuestion2 = new Answer('Hydnora africana');
