@@ -1,7 +1,7 @@
 <?php
 require_once "../utils/autoloader.php";
 
-
+// ===================== Partie du QCM 1 sur les plantes ========================
 // Préparations des tableaux de réponse pour créer les questions
 $possibilitesReponsesQuestion1 = [
     new Answer('Hydnora africana', false),
@@ -22,7 +22,30 @@ $questionPossibleDuQcm = [
 
 // Création du Qcm à partir des questions et réponses précédentes
 $qcm = new Qcm("Quizz des plantes", $questionPossibleDuQcm)
+// ==================================================================================
 
+// ===================== Partie du QCM 2 sur les livres =============================
+// Préparations des tableaux de réponse pour créer les questions
+$possibilitesReponsesQuestion3 = [
+    new Answer('Bertrant Piccard', false),
+    new Answer('Joanne Rowling', true)
+];
+
+$possibilitesReponsesQuestion4 = [
+    new Answer('Bertrant Piccard', true),
+    new Answer('Joanne Rowling', false)
+];
+
+// Préparations des questions possibles pour le Qcm
+$questionPossibleDuQcm = [
+    new Question('Qui a écrit Harry Potter ?', $possibilitesReponsesQuestion3),
+    new Question('Qui a écrit le livre Changer d\'altitude ?', $possibilitesReponsesQuestion4)
+];
+
+
+// Création du Qcm à partir des questions et réponses précédentes
+$qcm = new Qcm("Quizz des plantes", $questionPossibleDuQcm)
+// ====================================================================================
 
 // var_dump($qcm->getQuestions()[0]->getIntitule());
 ?>
@@ -58,17 +81,6 @@ $qcm = new Qcm("Quizz des plantes", $questionPossibleDuQcm)
 
     <p><?= $qcm->getQuestions()[0]->getIntitule() ?></p>
 
-
-    <!-- <p>Réponse 1 : Hydnora africana</p>
-    <p>Réponse 2 : Rafflésie</p>
-
-    <p>Quelle plante a inspiré le design des Demogorgons dans la série Stranger Things ?</p>
-    <p>Réponse 1 : Hydnora africana</p>
-    <p>Réponse 2 : Rafflésie</p> -->
-
 </body>
-
-
 <footer></footer>
-
 </html>
