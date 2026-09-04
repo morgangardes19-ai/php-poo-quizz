@@ -2,15 +2,15 @@
 class Question
 {
     private string $intitule;
-    private array $answer;
+    private array $answers;
 
     public function __construct(
         string $intitule,
-        array $answer
+        array $answers
     )
     {
        $this->intitule = $intitule;
-       $this->answer = $answer;
+       $this->answers = $answers;
     }
 
     public function getIntitule(): string
@@ -20,6 +20,6 @@ class Question
 
     public function getAnswers(): array 
     {
-    return $this->answer;
+    return $this->answers;
 }
 }

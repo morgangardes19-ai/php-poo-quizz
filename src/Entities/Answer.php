@@ -4,7 +4,7 @@ class Answer
     private string $answer;
     private bool $isCorrect;
 
-       public function __construct(
+    public function __construct(
         string $answer,
         bool $isCorrect
     )
