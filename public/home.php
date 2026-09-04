@@ -37,14 +37,14 @@ $possibilitesReponsesQuestion4 = [
 ];
 
 // Préparations des questions possibles pour le Qcm
-$questionPossibleDuQcm = [
+$questionPossibleDuQcmLivre = [
     new Question('Qui a écrit Harry Potter ?', $possibilitesReponsesQuestion3),
     new Question('Qui a écrit le livre Changer d\'altitude ?', $possibilitesReponsesQuestion4)
 ];
 
 
 // Création du Qcm à partir des questions et réponses précédentes
-$qcm = new Qcm("Quizz des livres", $questionPossibleDuQcm);
+$qcm2 = new Qcm("Quizz des livres", $questionPossibleDuQcmLivre);
 // ====================================================================================
 
 // var_dump($qcm->getQuestions()[0]->getIntitule());
