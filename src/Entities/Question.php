@@ -7,19 +7,18 @@ class Question
     public function __construct(
         string $intitule,
         array $answers
-    )
-    {
-       $this->intitule = $intitule;
-       $this->answers = $answers;
+    ) {
+        $this->intitule = $intitule;
+        $this->answers = $answers;
     }
 
     public function getIntitule(): string
-     {
+    {
         return $this->intitule;
     }
 
-    public function getAnswers(): array 
+    public function getAnswers(): array
     {
-    return $this->answers;
-}
+        return $this->answers;
+    }
 }

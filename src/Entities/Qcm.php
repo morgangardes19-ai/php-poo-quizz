@@ -1,13 +1,20 @@
 <?php
 class Qcm
 {
+    private int $id;
     private string $name;
     private array $questions;
 
-    public function __construct(string $name, array $questions)
+    public function __construct(int $id, string $name, array $questions)
     {
+        $this->id = $id;
         $this->name = $name;
         $this->questions = $questions;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
     }
 
     public function getName(): string
