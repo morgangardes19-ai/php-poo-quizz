@@ -48,7 +48,7 @@ foreach ($questionActuelle->getAnswers() as $answer) { ?>
 <?php } ?>
 
 
-   
+
 
 </body>
 <footer></footer>

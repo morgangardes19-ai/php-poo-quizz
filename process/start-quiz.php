@@ -61,7 +61,8 @@ session_start();
 $_SESSION['quiz_id'] = $id;
 $_SESSION['questions'] = $questionPossibleDuQcm;
 $_SESSION['indicateur_question'] = 0;
-
+// Initialisation du score à 0
+$_SESSION['score'] = 0;
 
 header("Location: ../public/questions.php");
 exit();
