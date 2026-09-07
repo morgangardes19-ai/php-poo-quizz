@@ -43,11 +43,10 @@ $questionActuelle = $_SESSION["questions"][$_SESSION["indicateur_question"]];
 /**
  * @var Answer $answer
  */
-foreach ($questionActuelle->getAnswers() as $answer) { ?>
-    <a href="../process/next-question.php"><?= $answer->getAnswer() ?></a>
+
+foreach ($questionActuelle->getAnswers() as $index => $answer) { ?>
+    <a href="../process/next-question.php?choix=<?= $index ?>"><?= $answer->getAnswer() ?></a>
 <?php } ?>
-
-
 
 
 </body>
