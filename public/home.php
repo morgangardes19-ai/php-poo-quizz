@@ -21,7 +21,7 @@ $questionPossibleDuQcm = [
 
 
 // Création du Qcm à partir des questions et réponses précédentes
-$qcmPlantes = new Qcm("Quizz des plantes", $questionPossibleDuQcm);
+$qcmPlantes = new Qcm("Quiz des plantes", $questionPossibleDuQcm);
 // ==================================================================================
 
 // ===================== Partie du QCM 2 sur les livres =============================
@@ -44,7 +44,7 @@ $questionPossibleDuQcmLivre = [
 
 
 // Création du Qcm à partir des questions et réponses précédentes
-$qcmLivres = new Qcm("Quizz des livres", $questionPossibleDuQcmLivre);
+$qcmLivres = new Qcm("Quiz des livres", $questionPossibleDuQcmLivre);
 // ====================================================================================
 
 ?>
@@ -65,12 +65,43 @@ $qcmLivres = new Qcm("Quizz des livres", $questionPossibleDuQcmLivre);
 
     <!-- <h1><?= $qcmPlantes->getName()  ?></h1> -->
 
-    <h1>Choisis ton quizz</h1>
+    <h1>Bienvenue dans le jeu des quiz</h1>
+
+    <p>Veuillez choisir un quiz parmi les suivants :</p>
 
     <?php if (!isset($_GET['qcm'])) { ?>
-        <a href="home.php?qcm=plantes">Quizz des plantes</a><br>
-        <a href="home.php?qcm=livres">Quizz des livres</a>
+        <a href="home.php?qcm=plantes">Quiz des plantes</a><br>
+        <a href="home.php?qcm=livres">Quiz des livres</a>
     <?php } ?>
+
+    <?php if (isset($_GET['qcm']) && $_GET['qcm'] === 'plantes') { ?>
+        <h1><?= $qcmPlantes->getName() ?></h1>
+        <!-- Question : Quelle est la fleur la plus rare du monde ? -->
+        <p><?= $qcmPlantes->getQuestions()[0]->getIntitule() ?></p>
+        <button><?= $possibilitesReponsesQuestion1[0]->getAnswer(); ?></button>
+        <button><?= $possibilitesReponsesQuestion1[1]->getAnswer(); ?></button>
+
+        <!-- Question : Quelle plante a inspiré le design des Demogorgons dans la série Stranger Things ? -->
+        <p><?= $qcmPlantes->getQuestions()[1]->getIntitule() ?></p>
+        <button><?= $possibilitesReponsesQuestion2[0]->getAnswer(); ?></button>
+        <button><?= $possibilitesReponsesQuestion2[1]->getAnswer(); ?></button>
+    <?php } ?>
+
+
+    <?php if (isset($_GET['qcm']) && $_GET['qcm'] === 'livres') { ?>
+        <h1><?= $qcmPlantes->getName() ?></h1>
+        <!-- Question : Qui a écrit Harry Potter ? -->
+        <p><?= $qcmLivres->getQuestions()[0]->getIntitule() ?></p>
+        <button><?= $possibilitesReponsesQuestion3[0]->getAnswer(); ?></button>
+        <button><?= $possibilitesReponsesQuestion3[1]->getAnswer(); ?></button>
+
+        <!-- Question : Qui a écrit le livre Changer d'altitude ? -->
+        <p><?= $qcmLivres->getQuestions()[1]->getIntitule() ?></p>
+        <button><?= $possibilitesReponsesQuestion4[0]->getAnswer() ?></button>
+        <button><?= $possibilitesReponsesQuestion4[1]->getAnswer() ?></button>
+    <?php } ?>
+
+
 
 
     <p><?= "1/{$qcmPlantes->compteQuestions()}" ?></p>
@@ -85,31 +116,6 @@ $qcmLivres = new Qcm("Quizz des livres", $questionPossibleDuQcmLivre);
 
     ?> -->
 
-    <h2></h2>
-    <p><?= $qcmPlantes->getQuestions()[0]->getIntitule() ?></p>
-    <button><?= $possibilitesReponsesQuestion1[0]->getAnswer(); ?></button>
-    <button><?= $possibilitesReponsesQuestion1[1]->getAnswer(); ?></button>
-
-    <h2></h2>
-    <p><?= $qcmPlantes->getQuestions()[1]->getIntitule() ?></p>
-    <button><?= $possibilitesReponsesQuestion1[0]->getAnswer(); ?></button>
-    <button><?= $possibilitesReponsesQuestion1[1]->getAnswer(); ?></button>
-
-    <h2></h2>
-    <p><?= $qcmLivres->getQuestions()[0]->getIntitule() ?></p>
-    <button><?= $possibilitesReponsesQuestion3[0]->getAnswer(); ?></button>
-    <button><?= $possibilitesReponsesQuestion3[1]->getAnswer(); ?></button>
-
-    <h2></h2>
-    <p><?= $qcmLivres->getQuestions()[1]->getIntitule() ?></p>
-    <button><?= $possibilitesReponsesQuestion4[0]->getAnswer() ?></button>
-    <button><?= $possibilitesReponsesQuestion4[1]->getAnswer() ?></button>
-
-    <?php
-
-
-
-    ?>
 </body>
 <footer></footer>
 
