@@ -53,8 +53,8 @@ if ($id === 1) {
     // ====================================================================================
 }
 
-var_dump($questionPossibleDuQcm);
-session_start();
+// var_dump($questionPossibleDuQcm);
+// session_start();
 // session_destroy();
 
 // On remplit la session en fonction de nos besoin, il y aura potentiellement + de choses plus tard à ranger dedans

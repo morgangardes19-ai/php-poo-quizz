@@ -7,7 +7,7 @@ require_once "../utils/autoloader.php";
 session_start();
 
 // 1. Récupérer la réponse cliquée depuis l'URL
-$choix = $_GET['choix'];
+$choix = htmlspecialchars(trim($_GET['choix']));
 
 // var_dump($choix);
 // die();
