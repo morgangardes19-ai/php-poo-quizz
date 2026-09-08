@@ -12,11 +12,9 @@ session_start();
 // )
 
 
-if ($_SESSION["indicateur_question"] === $_SESSION["questions"]) { ?>
-    <h1>Quiz terminé !</h1>
-    <p>Ton score : <?php  $_SESSION["score"] / $_SESSION["questions"]?> </p>
-    <a href="index.php">Retour à la liste des quiz</a>
-<?php  } else {
+?>
+   
+<?php 
 /**
  * @var Question $questionActuelle
  */
@@ -62,5 +60,3 @@ foreach ($questionActuelle->getAnswers() as $index => $answer) { ?>
 <footer></footer>
 
 </html>
-
-<?php }?>

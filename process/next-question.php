@@ -1,4 +1,4 @@
-<?php 
+<?php
 // Exemples de choses qu'on peut faire ici dans ce process : 
 // - Vérifier si la réponse est bonne
 // - Incrémenter le score si la réponse est bonne
@@ -33,22 +33,17 @@ if ($reponseChoisie->isCorrect()) {
 // die();
 
 
-
-
-// Faire un count avec php. Si le count des questions
-if () {
-    # code...
+if ($_SESSION["indicateur_question"] === count($_SESSION["questions"]) - 1) {
+    header("Location: ../public/score.php");
+    exit();
 } else {
-    
+
+
+    // 5. Passer à la question suivante
+    $_SESSION["indicateur_question"] = $_SESSION["indicateur_question"] + 1;
+
+    // var_dump($_SESSION);
+    // die();
 }
-// 5. Passer à la question suivante
-$_SESSION["indicateur_question"] = $_SESSION["indicateur_question"] + 1;
-
-// var_dump($_SESSION);
-// die();
-
 header("Location: ../public/questions.php");
 exit();
-
-
-?>
