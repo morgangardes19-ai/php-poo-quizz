@@ -10,8 +10,6 @@ session_start();
 // var_dump(
 //     $_SESSION["questions"][$_SESSION["indicateur_question"]]
 // )
-
-
 ?>
    
 <?php 
@@ -22,10 +20,6 @@ $questionActuelle = $_SESSION["questions"][$_SESSION["indicateur_question"]];
 
 // vardump des réponse d'une question
 // var_dump($questionActuelle->getAnswers());
-
-
-
-
 ?>
 
 

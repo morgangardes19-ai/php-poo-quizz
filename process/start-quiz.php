@@ -1,4 +1,19 @@
 <!-- NE PAS OUBLIER : REFAIRE ICI LA SECURITE -->
+ <?php 
+ if ($_SERVER['REQUEST_METHOD'] !== "GET") {
+    header("Location: ../public/index.php?error=bad-method");
+    exit();
+ }
+ if (!isset($_GET['id'])) {
+    header("Location: ../public/index.php?=error=missing-value");
+    exit();
+ }
+ if (empty($_GET['id'])) {
+    header("Location: ../public/index.php?error=empty-value");
+    exit();
+ }
+ ?>
+
 
 <?php
 require_once "../utils/autoloader.php";
@@ -54,7 +69,7 @@ if ($id === 1) {
 }
 
 // var_dump($questionPossibleDuQcm);
-// session_start();
+session_start();
 // session_destroy();
 
 // On remplit la session en fonction de nos besoin, il y aura potentiellement + de choses plus tard à ranger dedans
