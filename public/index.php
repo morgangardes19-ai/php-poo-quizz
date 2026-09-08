@@ -1,4 +1,5 @@
 <?php 
+require_once "../_partials/_head.php";
 require_once "../utils/autoloader.php";
 // A remplacer plus tard par un appel à la BDD pour récupérer tous les quizz existant !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // ===================== Partie du QCM 1 sur les plantes ========================
@@ -55,7 +56,7 @@ $qcms = [
 
 
 <body>
-    <h1>Choisissez un quizz</h1>
+    <h1>Sélectionnez un quiz pour tester vos connaissances et découvrir votre score !</h1>
 
     <?php foreach ($qcms as $qcm) { ?>
         <a href="../process/start-quiz.php?id=<?= $qcm->getId() ?>"><?= $qcm->getName() ?></a>
