@@ -32,6 +32,15 @@ if ($reponseChoisie->isCorrect()) {
 // var_dump($_SESSION);
 // die();
 
+
+
+
+// Faire un count avec php. Si le count des questions
+if () {
+    # code...
+} else {
+    
+}
 // 5. Passer à la question suivante
 $_SESSION["indicateur_question"] = $_SESSION["indicateur_question"] + 1;
 

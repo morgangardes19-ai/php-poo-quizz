@@ -11,6 +11,12 @@ session_start();
 //     $_SESSION["questions"][$_SESSION["indicateur_question"]]
 // )
 
+
+if ($_SESSION["indicateur_question"] === $_SESSION["questions"]) { ?>
+    <h1>Quiz terminé !</h1>
+    <p>Ton score : <?php  $_SESSION["score"] / $_SESSION["questions"]?> </p>
+    <a href="index.php">Retour à la liste des quiz</a>
+<?php  } else {
 /**
  * @var Question $questionActuelle
  */
@@ -18,6 +24,9 @@ $questionActuelle = $_SESSION["questions"][$_SESSION["indicateur_question"]];
 
 // vardump des réponse d'une question
 // var_dump($questionActuelle->getAnswers());
+
+
+
 
 ?>
 
@@ -53,3 +62,5 @@ foreach ($questionActuelle->getAnswers() as $index => $answer) { ?>
 <footer></footer>
 
 </html>
+
+<?php }?>
