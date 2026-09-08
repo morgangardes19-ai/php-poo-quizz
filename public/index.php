@@ -4,13 +4,13 @@ require_once "../utils/autoloader.php";
 // ===================== Partie du QCM 1 sur les plantes ========================
 // Préparations des tableaux de réponse pour créer les questions
 $possibilitesReponsesQuestion1 = [
-    new Answer('Hydnora africana', false),
-    new Answer('Rafflésie', true)
+    new Answer('Une rose', false),
+    new Answer('La rafflésie', true)
 ];
 
 $possibilitesReponsesQuestion2 = [
     new Answer('Hydnora africana', true),
-    new Answer('Rafflésie', false)
+    new Answer('Un pissenlit', false)
 ];
 
 // Préparations des questions possibles pour le Qcm
@@ -27,13 +27,13 @@ $qcmPlantes = new Qcm(1, "Quiz des plantes", $questionPossibleDuQcm);
 // ===================== Partie du QCM 2 sur les livres =============================
 // Préparations des tableaux de réponse pour créer les questions
 $possibilitesReponsesQuestion3 = [
-    new Answer('Bertrant Piccard', false),
+    new Answer('Franck Thilliez', false),
     new Answer('Joanne Rowling', true)
 ];
 
 $possibilitesReponsesQuestion4 = [
     new Answer('Bertrant Piccard', true),
-    new Answer('Joanne Rowling', false)
+    new Answer('Tony Attwood', false)
 ];
 
 // Préparations des questions possibles pour le Qcm
@@ -53,13 +53,7 @@ $qcms = [
 ];
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+
 <body>
     <h1>Choisissez un quizz</h1>
 

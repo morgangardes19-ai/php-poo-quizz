@@ -5,7 +5,7 @@
     exit();
  }
  if (!isset($_GET['id'])) {
-    header("Location: ../public/index.php?=error=missing-value");
+    header("Location: ../public/index.php?error=missing-value");
     exit();
  }
  if (empty($_GET['id'])) {
@@ -29,13 +29,13 @@ if ($id === 1) {
 
     // Préparations des tableaux de réponse pour créer les questions
     $possibilitesReponsesQuestion1 = [
-        new Answer('Hydnora africana', false),
-        new Answer('Rafflésie', true)
+        new Answer('Une rose', false),
+        new Answer('La rafflésie', true)
     ];
 
     $possibilitesReponsesQuestion2 = [
-        new Answer('Hydnora africana', true),
-        new Answer('Rafflésie', false)
+        new Answer('L\'hydnora africana', true),
+        new Answer('Un pissenlit', false)
     ];
 
     // Préparations des questions possibles pour le Qcm
@@ -51,13 +51,13 @@ if ($id === 1) {
     // ===================== Partie du QCM 2 sur les livres =============================
     // Préparations des tableaux de réponse pour créer les questions
     $possibilitesReponsesQuestion3 = [
-        new Answer('Bertrant Piccard', false),
+        new Answer('Franck Thilliez', false),
         new Answer('Joanne Rowling', true)
     ];
 
     $possibilitesReponsesQuestion4 = [
         new Answer('Bertrant Piccard', true),
-        new Answer('Joanne Rowling', false)
+        new Answer('Tony Attwood', false)
     ];
 
     // Préparations des questions possibles pour le Qcm
