@@ -21,6 +21,11 @@ $questionActuelle = $_SESSION["questions"][$_SESSION["indicateur_question"]];
 
 // vardump des réponse d'une question
 // var_dump($questionActuelle->getAnswers());
+
+$answerRepository = new AnswerRepository($db);
+$answers = $answerRepository->findByQuestionId();
+
+
 ?>
 
 <body>

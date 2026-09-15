@@ -8,15 +8,34 @@ class AnswerRepository
         $this->db = $db;
     }
 
-    public function findAll(): array
-    {
-        $request = $this->db->query("SELECT* FROM `reponse` WHERE 1");
-        $answersDatas = $request->fetchall(PDO::FETCH_ASSOC);
-        $answers = [];
+    // public function findAll(): array
+    // {
+    //     $request = $this->db->query("SELECT* FROM `reponse` WHERE 1");
+    //     $answersDatas = $request->fetchall(PDO::FETCH_ASSOC);
+    //     $answers = [];
 
-        foreach ($answers as $answer) {
-            $answers[] = AnswerMapper::mapToObject($answersDatas);
-        }
-        return $answers;
+    //     foreach ($answers as $answer) {
+    //         $answers[] = AnswerMapper::mapToObject($answersDatas);
+    //     }
+    //     return $answers;
+    // }
+
+    // public function findByQuestionId(int $id)
+    // {
+    //     $request = $this->db->prepare("SELECT `id` FROM `question` VALUE (:id) WHERE 1");
+    //     $request->execute([
+    //         ':id' => $id
+    //     ]);
+    // }
+
+    public function findByQuestionId(int $id)
+    {
+        $request = $this->db->query("SELECT `id` FROM `question` WHERE 1");
+         $answersDatas = $request->fetchAll(PDO::FETCH_ASSOC);
+    $answers = [];
+    foreach ($answersDatas as $answerDatas) {
+        $answers[] = AnswerMapper::mapTOOBject($answerDatas);
     }
+    return $answers;
+}
 }

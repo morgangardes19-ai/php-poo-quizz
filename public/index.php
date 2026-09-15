@@ -7,8 +7,6 @@ require_once "../utils/db.php";
 // ===================== Partie du QCM 1 sur les plantes ========================
 // Préparations des tableaux de réponse pour créer les questions
 
-$answerRepository = new AnswerRepository($db);
-$answers = $answerRepository->findAll();
 
 
 $possibilitesReponsesQuestion1 = [
@@ -74,7 +72,6 @@ $qcms = [
                 <p><?= $qcm->getDescription() ?></p>
                 <p>• <?= count($qcm->getQuestions()) ?> questions</p>
             </a>
-            <!-- <p>Testez vos connaissances sur le monde végétal</p>
         <?php } ?>
 
     </div>
