@@ -3,12 +3,14 @@ class Qcm
 {
     private int $id;
     private string $name;
+    private string $description;
     private array $questions;
 
-    public function __construct(int $id, string $name, array $questions)
+    public function __construct(int $id, string $name, string $description, array $questions)
     {
         $this->id = $id;
         $this->name = $name;
+        $this->description = $description;
         $this->questions = $questions;
     }
 
@@ -20,6 +22,11 @@ class Qcm
     public function getName(): string
     {
         return $this->name;
+    }
+
+    public function getDescription(): string
+    {
+        return $this->description;
     }
 
     public function getQuestions(): array

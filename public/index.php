@@ -1,9 +1,16 @@
 <?php
-require_once "../_partials/_head.php";
+require_once "./_partials/_head.php";
 require_once "../utils/autoloader.php";
+require_once "../utils/db.php";
+
 // A remplacer plus tard par un appel à la BDD pour récupérer tous les quizz existant !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // ===================== Partie du QCM 1 sur les plantes ========================
 // Préparations des tableaux de réponse pour créer les questions
+
+$answerRepository = new AnswerRepository($db);
+$answers = $answerRepository->findAll();
+
+
 $possibilitesReponsesQuestion1 = [
     new Answer('Une rose', false),
     new Answer('La rafflésie', true)
@@ -22,7 +29,7 @@ $questionPossibleDuQcm = [
 
 
 // Création du Qcm à partir des questions et réponses précédentes
-$qcmPlantes = new Qcm(1, "Quiz sur les plantes", $questionPossibleDuQcm);
+$qcmPlantes = new Qcm(1, "Quiz sur les plantes", "Testez vos connaissances sur le monde végétal", $questionPossibleDuQcm);
 // ==================================================================================
 
 // ===================== Partie du QCM 2 sur les livres =============================
@@ -45,7 +52,7 @@ $questionPossibleDuQcmLivre = [
 
 
 // Création du Qcm à partir des questions et réponses précédentes
-$qcmLivres = new Qcm(2, "Quiz sur les livres", $questionPossibleDuQcmLivre);
+$qcmLivres = new Qcm(2, "Quiz sur les livres", "Découvrez votre maîtrise de la littérature", $questionPossibleDuQcmLivre);
 // ====================================================================================
 
 $qcms = [
@@ -61,9 +68,13 @@ $qcms = [
 
     <div class="flex flex-col gap-10">
         <?php foreach ($qcms as $qcm) { ?>
-            <a class="" href="../process/start-quiz.php?id=<?= $qcm->getId() ?>"><?= $qcm->getName() ?></a>
-            <p>Testez vos connaissances sur le monde végétal</p>
-            <p>• 2 questions</p>
+
+            <a class="" href="../process/start-quiz.php?id=<?= $qcm->getId() ?>">
+                <h2><?= $qcm->getName() ?></h2>
+                <p><?= $qcm->getDescription() ?></p>
+                <p>• <?= count($qcm->getQuestions()) ?> questions</p>
+            </a>
+            <!-- <p>Testez vos connaissances sur le monde végétal</p>
         <?php } ?>
 
     </div>

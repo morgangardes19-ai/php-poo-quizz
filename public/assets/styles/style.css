@@ -164,6 +164,9 @@
   }
 }
 @layer utilities {
+  .static {
+    position: static;
+  }
   .flex {
     display: flex;
   }
@@ -178,9 +181,6 @@
   }
   .flex-col {
     flex-direction: column;
-  }
-  .gap-3 {
-    gap: calc(var(--spacing) * 3);
   }
   .gap-10 {
     gap: calc(var(--spacing) * 10);
@@ -222,10 +222,6 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-  }
-  .tracking-\[2px\] {
-    --tw-tracking: 2px;
-    letter-spacing: 2px;
   }
   .tracking-\[3px\] {
     --tw-tracking: 3px;
