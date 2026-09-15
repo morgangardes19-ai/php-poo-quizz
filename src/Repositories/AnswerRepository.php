@@ -20,20 +20,33 @@ class AnswerRepository
     //     return $answers;
     // }
 
-    public function findByQuestionId(int $id): bool
-    {
-        try {
-            $request = $this->db->prepare("SELECT `id` FROM `question` WHERE (:id)");
-            $request->execute([
-                ':id' => $id
-            ]);
+    // public function findByQuestionId(int $id): bool
+    // {
+    //     try {
+    //         $request = $this->db->prepare("SELECT `id` FROM `question` WHERE (:id)");
+    //         $request->execute([
+    //             ':id' => $id
+    //         ]);
 
-            return true;
-        } catch (\Throwable $th) {
+    //         return true;
+    //     } catch (\Throwable $th) {
 
-            return false;
-        }
+    //         return false;
+    //     }
+    // }
+
+    public function findByQuestionId(int $id): array
+{
+    $request = $this->db->prepare("SELECT * FROM reponse WHERE question_id = :id");
+    $request->execute([':id' => $id]);
+
+    $answersDatas = $request->fetchAll(PDO::FETCH_ASSOC);
+    $answers = [];
+    foreach ($answersDatas as $answerDatas) {
+        $answers[] = AnswerMapper::mapToObject($answerDatas);
     }
+    return $answers;
+}
 
     //     public function findByQuestionId(int $id)
     //     {
