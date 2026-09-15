@@ -23,7 +23,7 @@ $questionActuelle = $_SESSION["questions"][$_SESSION["indicateur_question"]];
 // var_dump($questionActuelle->getAnswers());
 
 $answerRepository = new AnswerRepository($db);
-$answers = $answerRepository->findByQuestionId();
+$answers = $answerRepository->findByQuestionId($questionActuelle->getId());
 
 
 ?>

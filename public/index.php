@@ -21,7 +21,7 @@ $possibilitesReponsesQuestion2 = [
 
 // Préparations des questions possibles pour le Qcm
 $questionPossibleDuQcm = [
-    new Question('Quelle est la fleur la plus rare du monde ?', $possibilitesReponsesQuestion1),
+    new Question($id, 'Quelle est la fleur la plus rare du monde ?', $possibilitesReponsesQuestion1),
     new Question('Quelle plante a inspiré le design des Demogorgons dans la série Stranger Things ?', $possibilitesReponsesQuestion2)
 ];
 
