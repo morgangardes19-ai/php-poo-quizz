@@ -20,22 +20,29 @@ class AnswerRepository
     //     return $answers;
     // }
 
-    // public function findByQuestionId(int $id)
-    // {
-    //     $request = $this->db->prepare("SELECT `id` FROM `question` VALUE (:id) WHERE 1");
-    //     $request->execute([
-    //         ':id' => $id
-    //     ]);
-    // }
-
-    public function findByQuestionId(int $id)
+    public function findByQuestionId(int $id): bool
     {
-        $request = $this->db->query("SELECT `id` FROM `question` WHERE 1");
-         $answersDatas = $request->fetchAll(PDO::FETCH_ASSOC);
-    $answers = [];
-    foreach ($answersDatas as $answerDatas) {
-        $answers[] = AnswerMapper::mapTOOBject($answerDatas);
+        try {
+            $request = $this->db->prepare("SELECT `id` FROM `question` WHERE (:id)");
+            $request->execute([
+                ':id' => $id
+            ]);
+
+            return true;
+        } catch (\Throwable $th) {
+
+            return false;
+        }
     }
-    return $answers;
-}
+
+    //     public function findByQuestionId(int $id)
+    //     {
+    //         $request = $this->db->query("SELECT `id` FROM `question` WHERE 1");
+    //          $answersDatas = $request->fetchAll(PDO::FETCH_ASSOC);
+    //     $answers = [];
+    //     foreach ($answersDatas as $answerDatas) {
+    //         $answers[] = AnswerMapper::mapTOOBject($answerDatas);
+    //     }
+    //     return $answers;
+    // }
 }
