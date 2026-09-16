@@ -12,50 +12,30 @@ class AnswerRepository
     // {
     //     $request = $this->db->query("SELECT* FROM `reponse` WHERE 1");
     //     $answersDatas = $request->fetchall(PDO::FETCH_ASSOC);
-    //     $answers = [];
 
+    //     $answers = [];
     //     foreach ($answers as $answer) {
     //         $answers[] = AnswerMapper::mapToObject($answersDatas);
     //     }
     //     return $answers;
     // }
 
-    // public function findByQuestionId(int $id): bool
-    // {
-    //     try {
-    //         $request = $this->db->prepare("SELECT `id` FROM `question` WHERE (:id)");
-    //         $request->execute([
-    //             ':id' => $id
-    //         ]);
+    /**
+     * Cette méthode permet de récupérer toutes les réponses possible pour une question
+     * @param int $questionId = l'id de la question dont on veut les réponses possible
+     * @return array $answers = un tableau remplis d'objet Answer
+     */
+    public function findByQuestionId(int $questionId): array
+    {
+        $request = $this->db->prepare("SELECT * FROM reponse WHERE question_id = :questionId");
+        $request->execute([':questionId' => $questionId]);
 
-    //         return true;
-    //     } catch (\Throwable $th) {
-
-    //         return false;
-    //     }
-    // }
-
-    public function findByQuestionId(int $id): array
-{
-    $request = $this->db->prepare("SELECT * FROM reponse WHERE question_id = :id");
-    $request->execute([':id' => $id]);
-
-    $answersDatas = $request->fetchAll(PDO::FETCH_ASSOC);
-    $answers = [];
-    foreach ($answersDatas as $answerDatas) {
-        $answers[] = AnswerMapper::mapToObject($answerDatas);
+        $answersDatas = $request->fetchAll(PDO::FETCH_ASSOC);
+        $answers = [];
+        foreach ($answersDatas as $answerDatas) {
+            $answers[] = AnswerMapper::mapToObject($answerDatas);
+        }
+        return $answers;
     }
-    return $answers;
-}
 
-    //     public function findByQuestionId(int $id)
-    //     {
-    //         $request = $this->db->query("SELECT `id` FROM `question` WHERE 1");
-    //          $answersDatas = $request->fetchAll(PDO::FETCH_ASSOC);
-    //     $answers = [];
-    //     foreach ($answersDatas as $answerDatas) {
-    //         $answers[] = AnswerMapper::mapTOOBject($answerDatas);
-    //     }
-    //     return $answers;
-    // }
 }

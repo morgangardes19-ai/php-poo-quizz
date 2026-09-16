@@ -5,7 +5,8 @@ class AnswerMapper {
     public static function mapToObject(array $datas): Answer
     {
         return new Answer(
-            $datas['answer'],
+            $datas['id'],
+            $datas['reponse'],
             $datas['isCorrect']
         );
     }

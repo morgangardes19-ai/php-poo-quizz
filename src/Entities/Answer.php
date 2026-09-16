@@ -1,20 +1,21 @@
 <?php
 class Answer
 {
-    private string $answer;
-    private bool $isCorrect;
 
     public function __construct(
-        string $answer,
-        bool $isCorrect
-    )
+        private int $id,
+        private string $answer,
+        private bool $isCorrect,
+    ) {}
+
+
+    public function getId(): int
     {
-       $this->answer = $answer;
-       $this->isCorrect = $isCorrect;
+        return $this->id;
     }
 
     public function getAnswer(): string
-     {
+    {
         return $this->answer;
     }
 

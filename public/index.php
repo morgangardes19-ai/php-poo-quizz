@@ -1,62 +1,54 @@
 <?php
-require_once "./_partials/_head.php";
 require_once "../utils/autoloader.php";
 require_once "../utils/db.php";
 
 // A remplacer plus tard par un appel à la BDD pour récupérer tous les quizz existant !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // ===================== Partie du QCM 1 sur les plantes ========================
-// Préparations des tableaux de réponse pour créer les questions
+
+// On récupère TOUS les qcm de la BDD
+$qcmRepository = new QcmRepository($db);
+$qcms = $qcmRepository->findAll();
+
+// Pour chaque Qcm, je récupère les questions associés
+$questionRepository = new QuestionRepository($db);
+
+/**
+ * @var Qcm $qcm
+ */
+foreach ($qcms as $qcm) {
+    $qcmQuestions = $questionRepository->findByQcmId($qcm->getId());
+    $qcm->setQuestions($qcmQuestions);
+}
 
 
 
-$possibilitesReponsesQuestion1 = [
-    new Answer('Une rose', false),
-    new Answer('La rafflésie', true)
-];
-
-$possibilitesReponsesQuestion2 = [
-    new Answer('Hydnora africana', true),
-    new Answer('Un pissenlit', false)
-];
-
-// Préparations des questions possibles pour le Qcm
-$questionPossibleDuQcm = [
-    new Question($id, 'Quelle est la fleur la plus rare du monde ?', $possibilitesReponsesQuestion1),
-    new Question('Quelle plante a inspiré le design des Demogorgons dans la série Stranger Things ?', $possibilitesReponsesQuestion2)
-];
-
-
-// Création du Qcm à partir des questions et réponses précédentes
-$qcmPlantes = new Qcm(1, "Quiz sur les plantes", "Testez vos connaissances sur le monde végétal", $questionPossibleDuQcm);
 // ==================================================================================
 
 // ===================== Partie du QCM 2 sur les livres =============================
 // Préparations des tableaux de réponse pour créer les questions
-$possibilitesReponsesQuestion3 = [
-    new Answer('Franck Thilliez', false),
-    new Answer('Joanne Rowling', true)
-];
+// $possibilitesReponsesQuestion3 = [
+//     new Answer('Franck Thilliez', false),
+//     new Answer('Joanne Rowling', true)
+// ];
 
-$possibilitesReponsesQuestion4 = [
-    new Answer('Bertrant Piccard', true),
-    new Answer('Tony Attwood', false)
-];
+// $possibilitesReponsesQuestion4 = [
+//     new Answer('Bertrant Piccard', true),
+//     new Answer('Tony Attwood', false)
+// ];
 
 // Préparations des questions possibles pour le Qcm
-$questionPossibleDuQcmLivre = [
-    new Question('Qui a écrit Harry Potter ?', $possibilitesReponsesQuestion3),
-    new Question('Qui a écrit le livre Changer d\'altitude ?', $possibilitesReponsesQuestion4)
-];
+// $questionPossibleDuQcmLivre = [
+//     new Question('Qui a écrit Harry Potter ?', $possibilitesReponsesQuestion3),
+//     new Question('Qui a écrit le livre Changer d\'altitude ?', $possibilitesReponsesQuestion4)
+// ];
 
 
 // Création du Qcm à partir des questions et réponses précédentes
-$qcmLivres = new Qcm(2, "Quiz sur les livres", "Découvrez votre maîtrise de la littérature", $questionPossibleDuQcmLivre);
+// $qcmLivres = new Qcm(2, "Quiz sur les livres", "Découvrez votre maîtrise de la littérature", $questionPossibleDuQcmLivre);
 // ====================================================================================
 
-$qcms = [
-    $qcmPlantes,
-    $qcmLivres
-];
+
+require_once "./_partials/_head.php";
 ?>
 
 
@@ -70,7 +62,7 @@ $qcms = [
             <a class="" href="../process/start-quiz.php?id=<?= $qcm->getId() ?>">
                 <h2><?= $qcm->getName() ?></h2>
                 <p><?= $qcm->getDescription() ?></p>
-                <p>• <?= count($qcm->getQuestions()) ?> questions</p>
+                <p>• <?= $qcm->compteQuestions() ?> questions</p>
             </a>
         <?php } ?>
 
