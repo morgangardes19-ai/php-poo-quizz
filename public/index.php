@@ -12,6 +12,7 @@ $qcms = $qcmRepository->findAll();
 // Pour chaque Qcm, je récupère les questions associés
 $questionRepository = new QuestionRepository($db);
 
+// Cette boucle charge les questions de chaque QCM
 /**
  * @var Qcm $qcm
  */
@@ -19,33 +20,6 @@ foreach ($qcms as $qcm) {
     $qcmQuestions = $questionRepository->findByQcmId($qcm->getId());
     $qcm->setQuestions($qcmQuestions);
 }
-
-
-
-// ==================================================================================
-
-// ===================== Partie du QCM 2 sur les livres =============================
-// Préparations des tableaux de réponse pour créer les questions
-// $possibilitesReponsesQuestion3 = [
-//     new Answer('Franck Thilliez', false),
-//     new Answer('Joanne Rowling', true)
-// ];
-
-// $possibilitesReponsesQuestion4 = [
-//     new Answer('Bertrant Piccard', true),
-//     new Answer('Tony Attwood', false)
-// ];
-
-// Préparations des questions possibles pour le Qcm
-// $questionPossibleDuQcmLivre = [
-//     new Question('Qui a écrit Harry Potter ?', $possibilitesReponsesQuestion3),
-//     new Question('Qui a écrit le livre Changer d\'altitude ?', $possibilitesReponsesQuestion4)
-// ];
-
-
-// Création du Qcm à partir des questions et réponses précédentes
-// $qcmLivres = new Qcm(2, "Quiz sur les livres", "Découvrez votre maîtrise de la littérature", $questionPossibleDuQcmLivre);
-// ====================================================================================
 
 
 require_once "./_partials/_head.php";
@@ -57,6 +31,7 @@ require_once "./_partials/_head.php";
     <p class="text-[20px]  text-center">Sélectionnez un quiz pour tester vos connaissances et découvrir votre score !</p>
 
     <div class="flex flex-col gap-10">
+        <!-- Cette boucle fait l'affichage avec des balises echo -->
         <?php foreach ($qcms as $qcm) { ?>
 
             <a class="" href="../process/start-quiz.php?id=<?= $qcm->getId() ?>">

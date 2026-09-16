@@ -18,7 +18,7 @@ require_once "../utils/db.php";
 $idQcm = intval(htmlspecialchars(trim($_GET['id'])));
 
 
-// On récupère les questions du Qcm choisis (grâce à son id)
+// On récupère les questions du Qcm choisi (grâce à son id)
 $questionRepository = new QuestionRepository($db);
 $questions = $questionRepository->findByQcmId($idQcm);
 

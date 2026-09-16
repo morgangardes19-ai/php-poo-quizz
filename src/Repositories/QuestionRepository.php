@@ -23,7 +23,7 @@ class QuestionRepository
     /**
      * Cette méthode permet de récupérer toutes les questions possible pour un Qcm
      * @param int $qcmId = l'id du qcm dont on veut les questions possible
-     * @return array $questions = un tableau remplis d'objet Questions
+     * @return array $questions = un tableau rempli d'objet Questions
      */
     public function findByQcmId(int $qcmId): array
     {
