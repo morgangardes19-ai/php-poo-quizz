@@ -31,12 +31,30 @@ class UtilisateurRepository
 
 
 
-//  ?Utilisateur signifie : Soit un Objet Utilisateur, soit null si pas trouvé
-// SELECT => Ligne | FROM => Table | WHERE => Colonne
-    public function findByName(string $name): ?Utilisateur
+// //  ?Utilisateur signifie : Soit un Objet Utilisateur, soit null si pas trouvé
+// // SELECT => Ligne | FROM => Table | WHERE => Colonne
+//     public function findByName(string $name): ?Utilisateur
+//     {
+//         $request = $this->db->prepare("SELECT * FROM `utilisateur` WHERE `name` = :name");
+//         $request->execute([':name' => $name]);
+
+//         $utilisateurDatas = $request->fetch(PDO::FETCH_ASSOC);
+
+//         // Si aucune ligne trouvée, fetch() renvoie false → on renvoie null
+//         if (!$utilisateurDatas) {
+//             return null;
+//         }
+
+//         $utilisateur = UtilisateurMapper::mapToObject($utilisateurDatas);
+
+//         return $utilisateur;
+//     }
+// }
+
+    public function findByEmail(string $email): ?Utilisateur
     {
-        $request = $this->db->prepare("SELECT * FROM `utilisateur` WHERE `name` = :name");
-        $request->execute([':name' => $name]);
+        $request = $this->db->prepare("SELECT * FROM `utilisateur` WHERE `email` = :email");
+        $request->execute([':email' => $email]);
 
         $utilisateurDatas = $request->fetch(PDO::FETCH_ASSOC);
 

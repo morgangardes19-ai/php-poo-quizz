@@ -25,11 +25,14 @@ if ($_POST['mdp'] != $_POST['confirmation-mdp']) {
 $passwordHash = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
 
+
 require_once "../utils/db.php";
 require_once "../utils/autoloader.php";
 
-$utilisateurRepository = new UtilisateurRepository($db);
-$isSuccess = $utilisateurRepository->insertUser($name, $email, $passwordHash);
+// $utilisateurRepository = new UtilisateurRepository($db);
+// $isSuccess = $utilisateurRepository->insertUser($name, $email, $passwordHash);
+
+// ICI : REUTILISER LA METHODE findByEmail avec un IF
 
 if ($isSuccess) {
     header("Location: ../public/connexion.php");

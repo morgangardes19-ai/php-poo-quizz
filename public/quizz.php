@@ -19,10 +19,6 @@ foreach ($qcms as $qcm) {
     $qcm->setQuestions($qcmQuestions);
 }
 
-$themes = [
-    'plantes' => 'bg-blue-500',
-    'livres'  => 'bg-black',
-];
 
 require_once "./_partials/_head.php";
 
@@ -34,14 +30,19 @@ require_once "./_partials/_head.php";
 
     <div class="flex flex-col gap-10">
         <!-- Cette boucle fait l'affichage avec des balises echo -->
-        <?php foreach ($qcms as $qcm) { ?>
 
-            <a href="../process/start-quiz.php?id=<?= $qcm->getId() ?>">
-                <div class ="<?= $qcm->getTheme() ?>">
-                    <h2><?= $qcm->getName() ?></h2>
-                    <p><?= $qcm->getDescription() ?></p>
-                    <p>• <?= $qcm->compteQuestions() ?> questions</p>
-                </div>
+        <?php
+        /**
+         * @var Qcm $qcm
+         */
+        foreach ($qcms as $qcm) { ?>
+
+            <a style="background-color: <?= $qcm->getTheme() ?>" href="../process/start-quiz.php?id=<?= $qcm->getId() ?>">
+
+                <h2><?= $qcm->getName() ?></h2>
+                <p><?= $qcm->getDescription() ?></p>
+                <p>• <?= $qcm->compteQuestions() ?> questions</p>
+
             </a>
         <?php } ?>
 
