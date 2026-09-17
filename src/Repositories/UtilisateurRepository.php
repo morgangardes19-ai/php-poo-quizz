@@ -11,7 +11,7 @@ class UtilisateurRepository
     /**
      * Envoie les données d'inscription de l'utilisateur en BDD
      */
-     public function insertUser(string $name, string $email, string $mdp): bool
+    public function insertUser(string $name, string $email, string $mdp): bool
     {
         try {
             $request = $this->db->prepare("INSERT INTO `utilisateur`(`name`, `email`, `mdp`) VALUES (:name, :email, :mdp)");
@@ -29,4 +29,20 @@ class UtilisateurRepository
         }
     }
 
+
+    /**
+     * Récupère TOUS les utilisateurs sans exception
+     * @return array $utilisateurs = Un tableau rempli d'Objets utilisateur 
+     */
+    public function findAllUsers(): array
+    {
+        $request = $this->db->query("SELECT * FROM `utilisateur` WHERE 1");
+        $utilisateursDatas = $request->fetchAll(PDO::FETCH_ASSOC);
+
+        $utilisateurs = [];
+        foreach ($utilisateursDatas as $utilisateurDatas) {
+            $utilisateurs[] = UtilisateurMapper::mapToObject($utilisateurDatas);
+        }
+        return $utilisateurs;
+    }
 }

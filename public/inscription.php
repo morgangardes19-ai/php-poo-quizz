@@ -1,8 +1,5 @@
 <?php
 require_once "./_partials/_head.php";
-require_once "../utils/autoloader.php";
-
-
 
 ?>
 
