@@ -3,6 +3,8 @@ require_once "../_partials/_head.php";
 require_once "../utils/autoloader.php";
 require_once "../utils/db.php";
 session_start(); 
+
+
 ?> 
 
  <h1>Quiz terminé !</h1>

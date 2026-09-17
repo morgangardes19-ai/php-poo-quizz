@@ -38,8 +38,8 @@ require_once "./_partials/_head.php";
      */
     foreach ($questionActuelle->getAnswers() as $index => $answer) { ?>
         <a href="../process/next-question.php?choix=<?= $index ?>"><?= $answer->getAnswer() ?></a>
-    <?php } ?>
 
+    <?php } ?>
 
 </body>
 </html>
