@@ -29,7 +29,7 @@ require_once "../utils/db.php";
 require_once "../utils/autoloader.php";
 
 $utilisateurRepository = new UtilisateurRepository($db);
-$isSuccess = $utilisateurRepository->insertUser(string $name, string $email, string $passwordHash);
+$isSuccess = $utilisateurRepository->insertUser($name, $email, $passwordHash);
 
 if ($isSuccess) {
     header("Location: ../public/connexion.php");
