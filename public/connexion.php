@@ -20,5 +20,6 @@ require_once "./_partials/_head.php";
             <button type="submit">Connexion</button>
         </form>
     </section>
+     <a href="./inscription.php">Inscription</a>
 
 </body>
