@@ -10,12 +10,17 @@ require_once "../utils/autoloader.php";
 
     <section>
         <form action="../process/inscription.php" method="post">
-            <label for="name"></label>
+            <label for="name">Nom</label>
             <input type="text" name="name" id="name">
-            <label for="email"></label>
+
+            <label for="email">Email</label>
             <input type="text" name="email" id="email">
-            <label for="mdp"></label>
+
+            <label for="mdp">Mot de passe</label>
             <input type="password" name="mdp" id="mdp" placeholder="••••••••">
+
+            <label for="confirmation-mdp">Confirmation du mot de passe</label>
+            <input type="password" name="confirmation-mdp" id="confirmation-mdp" placeholder="••••••••">
         </form>
     </section>
 
