@@ -41,6 +41,8 @@ require_once "./_partials/_head.php";
             </a>
         <?php } ?>
 
+        <a href="./inscription.php">Inscription</a>
+
     </div>
 
 </body>

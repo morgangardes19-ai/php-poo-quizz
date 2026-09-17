@@ -26,5 +26,8 @@ $passwordHash = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
 
 require_once "../utils/db.php";
+require_once "../utils/autoloader.php";
 
+$utilisateurRepository = new UtilisateurRepository($db);
+$utilisateur = $utilisateurRepository->insertUser(string $name, string $email, string $passwordHash);
 ?>
