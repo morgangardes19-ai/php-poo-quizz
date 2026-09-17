@@ -33,9 +33,11 @@ require_once "./_partials/_head.php";
         <?php foreach ($qcms as $qcm) { ?>
 
             <a class="" href="../process/start-quiz.php?id=<?= $qcm->getId() ?>">
-                <h2><?= $qcm->getName() ?></h2>
-                <p><?= $qcm->getDescription() ?></p>
-                <p>• <?= $qcm->compteQuestions() ?> questions</p>
+                <div><?= $qcm->getTheme() ?>
+                    <h2><?= $qcm->getName() ?></h2>
+                    <p><?= $qcm->getDescription() ?></p>
+                    <p>• <?= $qcm->compteQuestions() ?> questions</p>
+                </div>
             </a>
         <?php } ?>
 

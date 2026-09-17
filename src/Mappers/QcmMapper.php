@@ -9,7 +9,8 @@ class QcmMapper {
             $datas['id'],
             $datas['nom'],
             $datas['description'],
-            null
+            null,
+            $datas['theme']
         );
     }
 }
