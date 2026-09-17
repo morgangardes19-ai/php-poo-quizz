@@ -29,5 +29,12 @@ require_once "../utils/db.php";
 require_once "../utils/autoloader.php";
 
 $utilisateurRepository = new UtilisateurRepository($db);
-$utilisateur = $utilisateurRepository->insertUser(string $name, string $email, string $passwordHash);
+$isSuccess = $utilisateurRepository->insertUser(string $name, string $email, string $passwordHash);
+
+if ($isSuccess) {
+    header("Location: ../public/connexion.php");
+} else {
+    header("Location: ../public/inscription.php?error=database-failed");
+}
+
 ?>
