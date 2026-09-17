@@ -1,27 +1,4 @@
 <?php
-require_once "../utils/autoloader.php";
-require_once "../utils/db.php";
-
-// A remplacer plus tard par un appel à la BDD pour récupérer tous les quizz existant !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// ===================== Partie du QCM 1 sur les plantes ========================
-
-// On récupère TOUS les qcm de la BDD
-$qcmRepository = new QcmRepository($db);
-$qcms = $qcmRepository->findAll();
-
-// Pour chaque Qcm, je récupère les questions associés
-$questionRepository = new QuestionRepository($db);
-
-// Cette boucle charge les questions de chaque QCM
-/**
- * @var Qcm $qcm
- */
-foreach ($qcms as $qcm) {
-    $qcmQuestions = $questionRepository->findByQcmId($qcm->getId());
-    $qcm->setQuestions($qcmQuestions);
-}
-
-
 require_once "./_partials/_head.php";
 
 ?>
@@ -31,9 +8,9 @@ require_once "./_partials/_head.php";
     <h1 class="font-Cormorant-Garamond text-center text-[40px] tracking-[3px] font-bold">Bienvenue au Quiz</h1>
     <a href="./quizz.php">Cliquez ici pour accéder à liste des quizz</a>
 
-        <a href="./inscription.php">Inscription</a>
-        <a href="./connexion.php">Connexion</a>
-        <a href="./deconnexion.php">Deconnexion</a>
+    <a href="./inscription.php">Inscription</a>
+    <a href="./connexion.php">Connexion</a>
+    <a href="./deconnexion.php">Deconnexion</a>
 
     </div>
 
