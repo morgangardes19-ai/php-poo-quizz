@@ -30,19 +30,23 @@ class UtilisateurRepository
     }
 
 
-    /**
-     * Récupère TOUS les utilisateurs sans exception
-     * @return array $utilisateurs = Un tableau rempli d'Objets utilisateur 
-     */
-    public function findAllUsers(): array
-    {
-        $request = $this->db->query("SELECT * FROM `utilisateur` WHERE 1");
-        $utilisateursDatas = $request->fetchAll(PDO::FETCH_ASSOC);
 
-        $utilisateurs = [];
-        foreach ($utilisateursDatas as $utilisateurDatas) {
-            $utilisateurs[] = UtilisateurMapper::mapToObject($utilisateurDatas);
+//  ?Utilisateur signifie : Soit un Objet Utilisateur, soit null si pas trouvé
+// SELECT => Ligne | FROM => Table | WHERE => Colonne
+    public function findByName(string $name): ?Utilisateur
+    {
+        $request = $this->db->prepare("SELECT * FROM `utilisateur` WHERE `name` = :name");
+        $request->execute([':name' => $name]);
+
+        $utilisateurDatas = $request->fetch(PDO::FETCH_ASSOC);
+
+        // Si aucune ligne trouvée, fetch() renvoie false → on renvoie null
+        if (!$utilisateurDatas) {
+            return null;
         }
-        return $utilisateurs;
+
+        $utilisateur = UtilisateurMapper::mapToObject($utilisateurDatas);
+
+        return $utilisateur;
     }
 }

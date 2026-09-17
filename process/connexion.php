@@ -22,10 +22,12 @@ require_once "../utils/db.php";
 require_once "../utils/autoloader.php";
 
 $utilisateurRepository = new UtilisateurRepository($db);
-$utilisateur = $utilisateurRepository->findAllUsers();
+// ICI : REMPLACER LA METHODE PAR FindByUtilisateur
+$utilisateur = $utilisateurRepository->findByName($name);
 
 if ($utilisateur) {
-    if (password_verify($_POST['mdp'], $utilisateur['mdp'])) {
+    // REMPLACER tableau ['mdp'] par OBJET avec ->
+    if (password_verify($_POST['mdp'], $utilisateur->getMdp())) {
         session_start();
         $_SESSION['utilisateur'] = $utilisateur;
         header("Location: ../public/index.php?connected=true");
