@@ -6,7 +6,8 @@ class Qcm
         private string $name,
         private string $description,
         private ?array $questions,
-        private string $theme
+        private string $theme,
+        private string $logo
     ) {}
 
     public function getId(): int
@@ -32,6 +33,11 @@ class Qcm
     public function getTheme(): string
     {
         return $this->theme;
+    }
+
+    public function getLogo(): string
+    {
+        return $this->logo;
     }
 
     public function setQuestions(array $questions): self
