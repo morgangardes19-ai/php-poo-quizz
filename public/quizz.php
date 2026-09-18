@@ -24,10 +24,10 @@ require_once "./_partials/_head.php";
 
 ?>
 
-<main class="min-h-screen bg-left bg-[url('../images/bg-quizz.png')] px-8 py-8 flex flex-col gap-12.5">
-    <p class="text-[20px]  text-center">Sélectionnez un quiz pour tester vos connaissances et découvrir votre score !</p>
+<main class="min-h-screen bg-bottom bg-cover bg-[url('../images/bg-quizz.png')] px-8 py-8 flex flex-col gap-12.5">
+    <p class="font-Inter text-[20px] text-center lg:text-[32px]">Sélectionnez un quiz pour tester vos connaissances et découvrir votre score !</p>
 
-    <div class="flex flex-col gap-10">
+    <div class="flex flex-col justify-center items-center gap-10 lg:flex-row">
         <!-- Cette boucle fait l'affichage avec des balises echo -->
 
         <?php
@@ -36,22 +36,18 @@ require_once "./_partials/_head.php";
          */
         foreach ($qcms as $qcm) { ?>
 
-            <a
+            <a class="flex flex-col gap-2 p-4 border-[3px] border-royal-gold rounded-2xl w-82.5 h-auto"
                 style="background-color: <?= $qcm->getTheme() ?>;"
                 href="../process/start-quiz.php?id=<?= $qcm->getId() ?>">
                 <img class="w-8 h-auto" src="<?= $qcm->getLogo() ?>" alt="Logo">
 
 
-                <h2><?= $qcm->getName() ?></h2>
-                <p><?= $qcm->getDescription() ?></p>
-                <p>• <?= $qcm->compteQuestions() ?> questions</p>
+                <h2 class="font-bold text-[20px] lg:text-[24px]"><?= $qcm->getName() ?></h2>
+                <p class="text-grey-text text-[16px] lg:text-[20px]"><?= $qcm->getDescription() ?></p>
+                <p class="text-grey-text text-[16px] lg:text-[20px]">• <?= $qcm->compteQuestions() ?> questions</p>
 
             </a>
         <?php } ?>
-
-        <a href="./inscription.php">Inscription</a>
-        <a href="./connexion.php">Connexion</a>
-        <a href="./deconnexion.php">Deconnexion</a>
 
     </div>
 

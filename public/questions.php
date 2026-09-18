@@ -20,15 +20,17 @@ session_start();
  */
 $questionActuelle = $_SESSION["questions"][$_SESSION["indicateur_question"]];
 
-// vardump des réponse d'une question
+// vardump des réponses d'une question
 // var_dump($questionActuelle->getAnswers());
 
 require_once "./_partials/_head.php";
 ?>
 
-<main>
+<main class="flex flex-col items-center justify-center gap-20" style="background-image: <?= $questionActuelle->getTheme() ?>;">
 
-    <h1><?= $questionActuelle->getIntitule() ?></h1>
+    <h1 class="font-Cormorant-Garamond text-[40px] font-bold tracking-[3px] lg:text-[54px]"><?= $questionActuelle->getIntitule() ?></h1>
+
+    <p class="text-[20px] lg:text-[24px]">Sélectionnez une réponse :</p>
 
 
     <?php 
@@ -36,9 +38,11 @@ require_once "./_partials/_head.php";
      * @var Answer $answer
      */
     foreach ($questionActuelle->getAnswers() as $index => $answer) { ?>
-        <a style="background-color: <?= $question->getTheme() ?>;" href="../process/next-question.php?choix=<?= $index ?>"><?= $answer->getAnswer() ?></a>
+        <a class="p-4 border-[3px] border-royal-gold rounded-2xl text-center text-[20px] w-62.5 h-15 lg:w-82.5 lg:h-auto lg:flex-row lg:text-[24px]" href="../process/next-question.php?choix=<?= $index ?>"><?= $answer->getAnswer() ?></a>
 
     <?php } ?>
+
+<p>Question : <?= $_SESSION["questions"] ?>/<?= count($_SESSION["questions"]) ?></p>
 
 </main>
 
