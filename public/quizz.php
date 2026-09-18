@@ -25,7 +25,7 @@ require_once "./_partials/_head.php";
 ?>
 
 
-<body class="bg-left bg-[url('../images/bg-quizz.png')] px-8 py-8 flex flex-col gap-12.5">
+<main class="min-h-screen bg-left bg-[url('../images/bg-quizz.png')] px-8 py-8 flex flex-col gap-12.5">
     <p class="text-[20px]  text-center">Sélectionnez un quiz pour tester vos connaissances et découvrir votre score !</p>
 
     <div class="flex flex-col gap-10">
@@ -37,7 +37,11 @@ require_once "./_partials/_head.php";
          */
         foreach ($qcms as $qcm) { ?>
 
-            <a style="background-color: <?= $qcm->getTheme() ?>" href="../process/start-quiz.php?id=<?= $qcm->getId() ?>">
+            <a
+                style="background-color: <?= $qcm->getTheme() ?>;"
+                href="../process/start-quiz.php?id=<?= $qcm->getId() ?>">
+                <img class="w-8 h-auto" src="<?= $qcm->getLogo() ?>" alt="Logo">
+
 
                 <h2><?= $qcm->getName() ?></h2>
                 <p><?= $qcm->getDescription() ?></p>
@@ -52,6 +56,9 @@ require_once "./_partials/_head.php";
 
     </div>
 
-</body>
+</main>
 
-</html>
+<?php
+require_once "./_partials/_footer.php";
+
+?>

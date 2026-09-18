@@ -26,7 +26,7 @@ $questionActuelle = $_SESSION["questions"][$_SESSION["indicateur_question"]];
 require_once "./_partials/_head.php";
 ?>
 
-<body>
+<main>
 
     <h1>Enoncé de la question actuelle :</h1>
     <h2><?= $questionActuelle->getIntitule() ?></h2>
@@ -41,5 +41,9 @@ require_once "./_partials/_head.php";
 
     <?php } ?>
 
-</body>
-</html>
+</main>
+
+<?php
+require_once "./_partials/_footer.php";
+
+?>

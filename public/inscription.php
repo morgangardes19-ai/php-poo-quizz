@@ -3,7 +3,7 @@ require_once "./_partials/_head.php";
 
 ?>
 
-<body>
+<main>
 
     <section>
         <form action="../process/inscription.php" method="post">
@@ -31,4 +31,9 @@ require_once "./_partials/_head.php";
         </form>
     </section>
 
-</body>
+</main>
+
+<?php
+require_once "./_partials/_footer.php";
+
+?>
