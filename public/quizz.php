@@ -24,7 +24,6 @@ require_once "./_partials/_head.php";
 
 ?>
 
-
 <main class="min-h-screen bg-left bg-[url('../images/bg-quizz.png')] px-8 py-8 flex flex-col gap-12.5">
     <p class="text-[20px]  text-center">Sélectionnez un quiz pour tester vos connaissances et découvrir votre score !</p>
 

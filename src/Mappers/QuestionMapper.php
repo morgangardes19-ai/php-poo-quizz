@@ -8,7 +8,8 @@ class QuestionMapper {
         return new Question(
             $datas['id'],
             $datas['intitule'],
-            null
+            null,
+            $datas['theme'],
         );
     }
 }

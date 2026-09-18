@@ -37,7 +37,7 @@ require_once "./_partials/_head.php";
      * @var Answer $answer
      */
     foreach ($questionActuelle->getAnswers() as $index => $answer) { ?>
-        <a href="../process/next-question.php?choix=<?= $index ?>"><?= $answer->getAnswer() ?></a>
+        <a class="<?= $question->getTheme() ?>" href="../process/next-question.php?choix=<?= $index ?>"><?= $answer->getAnswer() ?></a>
 
     <?php } ?>
 

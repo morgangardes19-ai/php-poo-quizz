@@ -4,7 +4,8 @@ class Question
     public function __construct(
         private int $id,
         private string $intitule,
-        private ?array $answers
+        private ?array $answers,
+        private string $theme
     ) {}
 
     public function getId(): int
@@ -20,6 +21,11 @@ class Question
     public function getAnswers(): ?array
     {
         return $this->answers;
+    }
+
+    public function getTheme(): string
+    {
+        return $this->theme;
     }
 
     public function setAnswers(array $answers): self {

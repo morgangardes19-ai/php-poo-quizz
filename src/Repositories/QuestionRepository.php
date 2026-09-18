@@ -38,4 +38,9 @@ class QuestionRepository
         return $questions;
     }
 
+    public function findByThemeId(string $themeId) : array
+    {
+         $request = $this->db->prepare("SELECT * FROM question WHERE qcm_id = :qcmId");
+        $request->execute([':qcmId' => $qcmId]);
+    }
 }

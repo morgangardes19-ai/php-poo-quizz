@@ -216,15 +216,6 @@
   .min-h-screen {
     min-height: 100vh;
   }
-  .w-2 {
-    width: calc(var(--spacing) * 2);
-  }
-  .w-4 {
-    width: calc(var(--spacing) * 4);
-  }
-  .w-6 {
-    width: calc(var(--spacing) * 6);
-  }
   .w-8 {
     width: calc(var(--spacing) * 8);
   }
@@ -281,10 +272,6 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .border-t {
-    border-top-style: var(--tw-border-style);
-    border-top-width: 1px;
-  }
   .border-b {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
@@ -298,17 +285,32 @@
       background-color: color-mix(in oklab, var(--color-black) 95%, transparent);
     }
   }
+  .bg-\[url\(\'\.\.\/images\/bg-livres\.png\'\)\] {
+    background-image: url('../images/bg-livres.png');
+  }
+  .bg-\[url\(\'\.\.\/images\/bg-plantes\.png\'\)\] {
+    background-image: url('../images/bg-plantes.png');
+  }
   .bg-\[url\(\'\.\.\/images\/bg-quizz\.png\'\)\] {
     background-image: url('../images/bg-quizz.png');
   }
   .bg-\[url\(\'\.\.\/images\/quizz-score\.png\'\)\] {
     background-image: url('../images/quizz-score.png');
   }
+  .bg-cover {
+    background-size: cover;
+  }
+  .bg-bottom {
+    background-position: bottom;
+  }
   .bg-center {
     background-position: center;
   }
   .bg-left {
     background-position: left;
+  }
+  .bg-top {
+    background-position: top;
   }
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
@@ -321,9 +323,6 @@
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
-  }
-  .py-6 {
-    padding-block: calc(var(--spacing) * 6);
   }
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
@@ -343,9 +342,6 @@
   .text-\[20px\] {
     font-size: 20px;
   }
-  .text-\[24px\] {
-    font-size: 24px;
-  }
   .text-\[40px\] {
     font-size: 40px;
   }
@@ -360,10 +356,6 @@
   .tracking-\[10\%\] {
     --tw-tracking: 10%;
     letter-spacing: 10%;
-  }
-  .tracking-\[16\%\] {
-    --tw-tracking: 16%;
-    letter-spacing: 16%;
   }
   .underline {
     text-decoration-line: underline;
@@ -387,15 +379,6 @@
     }
     .lg\:hidden {
       display: none;
-    }
-    .lg\:flex-row {
-      flex-direction: row;
-    }
-    .lg\:justify-center {
-      justify-content: center;
-    }
-    .lg\:gap-8 {
-      gap: calc(var(--spacing) * 8);
     }
   }
 }
