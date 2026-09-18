@@ -28,8 +28,7 @@ require_once "./_partials/_head.php";
 
 <main>
 
-    <h1>Enoncé de la question actuelle :</h1>
-    <h2><?= $questionActuelle->getIntitule() ?></h2>
+    <h1><?= $questionActuelle->getIntitule() ?></h1>
 
 
     <?php 
@@ -37,7 +36,7 @@ require_once "./_partials/_head.php";
      * @var Answer $answer
      */
     foreach ($questionActuelle->getAnswers() as $index => $answer) { ?>
-        <a class="<?= $question->getTheme() ?>" href="../process/next-question.php?choix=<?= $index ?>"><?= $answer->getAnswer() ?></a>
+        <a style="background-color: <?= $question->getTheme() ?>;" href="../process/next-question.php?choix=<?= $index ?>"><?= $answer->getAnswer() ?></a>
 
     <?php } ?>
 
