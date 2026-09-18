@@ -26,7 +26,7 @@ $questionActuelle = $_SESSION["questions"][$_SESSION["indicateur_question"]];
 require_once "./_partials/_head.php";
 ?>
 
-<main class="flex flex-col items-center justify-center gap-20" style="background-image: <?= $questionActuelle->getTheme() ?>;">
+<main class="flex flex-col items-center justify-center gap-10" style="background-image: <?= $questionActuelle->getTheme() ?>;">
 
     <h1 class="font-Cormorant-Garamond text-[40px] font-bold tracking-[3px] lg:text-[54px]"><?= $questionActuelle->getIntitule() ?></h1>
 
@@ -42,7 +42,7 @@ require_once "./_partials/_head.php";
 
     <?php } ?>
 
-<p>Question : <?= $_SESSION["questions"] ?>/<?= count($_SESSION["questions"]) ?></p>
+<p>Question : <?= $_SESSION["indicateur_question"] +1 ?>/<?= count($_SESSION["questions"]) ?></p>
 
 </main>
 
