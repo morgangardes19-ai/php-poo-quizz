@@ -5,7 +5,7 @@ class Question
         private int $id,
         private string $intitule,
         private ?array $answers,
-        private string $theme
+        private ?string $theme
     ) {}
 
     public function getId(): int
@@ -23,7 +23,7 @@ class Question
         return $this->answers;
     }
 
-    public function getTheme(): string
+    public function getTheme(): ?string
     {
         return $this->theme;
     }

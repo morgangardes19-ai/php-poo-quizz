@@ -8,6 +8,7 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-white: #fff;
     --spacing: 0.25rem;
     --font-weight-bold: 700;
     --radius-lg: 0.5rem;
@@ -19,6 +20,7 @@
     --color-royal-gold: #fae070;
     --color-grey-text: #c2c2c2;
     --color-emerald: #15623C;
+    --color-grey-cases: #ededed;
   }
 }
 @layer base {
@@ -203,9 +205,6 @@
   .w-82\.5 {
     width: calc(var(--spacing) * 82.5);
   }
-  .w-\[250px\] {
-    width: 250px;
-  }
   .border-collapse {
     border-collapse: collapse;
   }
@@ -233,14 +232,8 @@
   .gap-12\.5 {
     gap: calc(var(--spacing) * 12.5);
   }
-  .rounded {
-    border-radius: 0.25rem;
-  }
   .rounded-2xl {
     border-radius: var(--radius-2xl);
-  }
-  .rounded-\[8px\] {
-    border-radius: 8px;
   }
   .rounded-lg {
     border-radius: var(--radius-lg);
@@ -259,8 +252,14 @@
   .border-royal-gold {
     border-color: var(--color-royal-gold);
   }
+  .bg-grey-cases {
+    background-color: var(--color-grey-cases);
+  }
   .bg-royal-gold {
     background-color: var(--color-royal-gold);
+  }
+  .bg-white {
+    background-color: var(--color-white);
   }
   .bg-\[url\(\'\.\.\/images\/bg-quizz\.png\'\)\] {
     background-image: url('../images/bg-quizz.png');
@@ -301,9 +300,6 @@
   .text-\[20px\] {
     font-size: 20px;
   }
-  .text-\[29px\] {
-    font-size: 29px;
-  }
   .text-\[40px\] {
     font-size: 40px;
   }
@@ -326,14 +322,11 @@
     outline-width: 1px;
   }
   @media (width >= 64rem) {
+    .lg\:flex {
+      display: flex;
+    }
     .lg\:h-20 {
       height: calc(var(--spacing) * 20);
-    }
-    .lg\:h-30 {
-      height: calc(var(--spacing) * 30);
-    }
-    .lg\:h-120 {
-      height: calc(var(--spacing) * 120);
     }
     .lg\:h-auto {
       height: auto;
@@ -343,12 +336,6 @@
     }
     .lg\:w-82\.5 {
       width: calc(var(--spacing) * 82.5);
-    }
-    .lg\:w-125 {
-      width: calc(var(--spacing) * 125);
-    }
-    .lg\:w-500 {
-      width: calc(var(--spacing) * 500);
     }
     .lg\:flex-row {
       flex-direction: row;
@@ -367,9 +354,6 @@
     }
     .lg\:text-\[64px\] {
       font-size: 64px;
-    }
-    .lg\:text-\[px\] {
-      color: px;
     }
   }
 }

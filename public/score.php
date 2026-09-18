@@ -10,7 +10,7 @@ require_once "./_partials/_head.php";
 
 <main class="flex flex-col justify-center items-center gap-10 min-h-screen bg-top bg-cover bg-[url('../images/quizz-score.png')]">
 
-    <h1 class="font-Cormorant-Garamond font-bold text-[40px] tracking-[3px]">Félicitations vous avez terminé ce quiz !</h1>
+    <h1 class="font-Cormorant-Garamond font-bold text-[40px] tracking-[3px] text-center">Félicitations vous avez terminé ce quiz !</h1>
     <p class="font-Inter text-[20px] lg:text-[32px] ">Votre score :</p>
 
     <p class="flex justify-center items-center bg-royal-gold border-[3px] border-emerald w-62.5 h-15 text-[20px] lg:text-[32px] lg:w-70 lg:h-20 rounded-lg">

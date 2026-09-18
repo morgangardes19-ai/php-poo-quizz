@@ -37,7 +37,7 @@ require_once "./_partials/_head.php";
         foreach ($qcms as $qcm) { ?>
 
             <a class="flex flex-col gap-2 p-4 border-[3px] border-royal-gold rounded-2xl w-82.5 h-auto"
-                style="background-color: <?= $qcm->getTheme() ?>;"
+                style="background-color: <?= htmlspecialchars($qcm->getTheme()) ?>;"
                 href="../process/start-quiz.php?id=<?= $qcm->getId() ?>">
                 <img class="w-8 h-auto" src="<?= $qcm->getLogo() ?>" alt="Logo">
 
